@@ -1,6 +1,4 @@
 # SAURNET
-Edge-AI framework for solar monitoring with real-time fault detection, anomaly analysis and short-term power forecasting with minimal cloud dependency
-# SAURNET
 
 **Edge-AI framework for real-time solar monitoring — fault detection, anomaly analysis, and short-term power forecasting with minimal cloud dependency.**
 
