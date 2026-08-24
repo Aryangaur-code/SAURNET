@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --popover: #ffffff;
+    --popover-foreground: #0f172a;
+    --primary: #10b981;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f59e0b;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #10b981;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: #030712; /* Tesla deep black-gray */
+    --foreground: #f9fafb;
+    --card: #0b0f19; /* High-contrast card backplate */
+    --card-foreground: #f9fafb;
+    --popover: #0b0f19;
+    --popover-foreground: #f9fafb;
+    --primary: #10b981;
+    --primary-foreground: #022c22;
+    --secondary: #111827;
+    --secondary-foreground: #f9fafb;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+    --accent: #f59e0b;
+    --accent-foreground: #451a03;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #1f2937;
+    --input: #1f2937;
+    --ring: #10b981;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Premium Tesla Glass Panel Styles */
+.tesla-glass {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.dark .tesla-glass {
+  background: rgba(11, 15, 25, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(31, 41, 55, 0.55);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Glowing Neon Elements */
+.neon-glow-emerald {
+  box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.35);
+}
+.neon-glow-amber {
+  box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.35);
+}
+.neon-glow-cyan {
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.35);
+}
+.neon-glow-red {
+  box-shadow: 0 0 15px -3px rgba(239, 68, 68, 0.35);
+}
+
+.dark .tesla-glass:hover {
+  border-color: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.08);
+}
+
+/* Silicon Solar Panel Cell Pattern */
+.solar-cell-pattern {
+  background-size: 8px 8px;
+  background-image: linear-gradient(to right, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+}
+
+/* Keyframe Animations */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash-fast {
+  stroke-dasharray: 6, 3;
+  animation: dash 0.8s linear infinite;
+}
+
+.animate-dash-medium {
+  stroke-dasharray: 6, 3;
+  animation: dash 1.5s linear infinite;
+}
+
+.animate-dash-slow {
+  stroke-dasharray: 6, 3;
+  animation: dash 3s linear infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.015);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Modern Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 99px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
